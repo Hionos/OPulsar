@@ -1,0 +1,14 @@
+with "../../hal/hal.gpr";
+with "../pulsar.gpr";
+with "../navigation_reference/navigation_reference_impl.gpr";
+with "../remote_control/remote_control_impl.gpr";
+with "../motors_mixing/motors_mixing_impl.gpr";
+
+project Flight_Control_Impl extends "../../../settings.gpr" is
+
+   for Languages   use ("Ada");
+   for Source_Dirs use ("impl", "generated");
+   for Object_Dir  use "obj" & "/" & Target & "/" & Build;
+
+end Flight_Control_Impl;
+

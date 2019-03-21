@@ -1,0 +1,8 @@
+project Hal extends "../../settings.gpr" is
+
+   for Languages   use ("Ada");
+   for Source_Dirs use (".");
+   for Object_Dir  use "obj" & "/" & Target & "/" & Build;
+
+end Hal;
+

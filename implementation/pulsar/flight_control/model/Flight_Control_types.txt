@@ -1,0 +1,443 @@
+EnumType "slhistoryListType"
+EnumLiteral "Favorites"  ordinal=0 default
+EnumLiteral "Projects" ordinal=1
+EnumLiteral "Models" ordinal=2
+Solver "FixedStepDiscrete" solverMode=SingleTasking fixedStep=te initializationMode=Simplified signalResolution=UseLocalSettings
+LibraryPath ../../../../../../../Program Files/MATLAB/R2017b/toolbox/simulink/blocks/library/
+Block "Flight_Control" samplePeriod=te
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single[3]"
+InDataPort portNumber=3 dataType="single[3]"
+InDataPort portNumber=4 dataType="uint8"
+InDataPort portNumber=5 dataType="single[2]"
+InDataPort portNumber=6 dataType="single[2]"
+OutDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=2 dataType="single[3]"
+OutDataPort portNumber=3 dataType="boolean"
+Block "Flight_Control/Rc_Orders.Throttle" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Rc_Orders.Rates" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Flight_Control/Attitude.Rates" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Flight_Control/Flight_Mode" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="uint8"
+Block "Flight_Control/Rc_Orders.Angles" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[2]"
+Block "Flight_Control/Attitude.Angles" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[2]"
+Block "Flight_Control/Flight_Control" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single[3]"
+InDataPort portNumber=3 dataType="single[3]"
+InDataPort portNumber=4 dataType="uint8"
+InDataPort portNumber=5 dataType="single[2]"
+InDataPort portNumber=6 dataType="single[2]"
+OutDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=2 dataType="single[3]"
+OutDataPort portNumber=3 dataType="boolean"
+Block "Flight_Control/Flight_Control/Rc_Throttle" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/Rc_Rates" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Flight_Control/Flight_Control/Attitude_Rates" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Flight_Control/Flight_Control/Flight_Mode" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="uint8"
+Block "Flight_Control/Flight_Control/Rc_Angle" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[2]"
+Block "Flight_Control/Flight_Control/Attitude_Angles" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[2]"
+Block "Flight_Control/Flight_Control/Demux" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+OutDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=3 dataType="single"
+Block "Flight_Control/Flight_Control/Demux1" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[2]"
+OutDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=2 dataType="single"
+Block "Flight_Control/Flight_Control/Demux2" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+OutDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=3 dataType="single"
+Block "Flight_Control/Flight_Control/Demux3" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[2]"
+OutDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=2 dataType="single"
+Block "Flight_Control/Flight_Control/From" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="uint8"
+Block "Flight_Control/Flight_Control/From1" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/From10" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/From11" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/From12" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="boolean"
+Block "Flight_Control/Flight_Control/From13" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/From14" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/From15" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="boolean"
+Block "Flight_Control/Flight_Control/From2" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/From3" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/From4" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="uint8"
+Block "Flight_Control/Flight_Control/From6" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/From7" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/From8" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/From9" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="boolean"
+Block "Flight_Control/Flight_Control/Goto" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="uint8"
+Block "Flight_Control/Flight_Control/Goto1" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="boolean"
+Block "Flight_Control/Flight_Control/Goto10" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/Goto12" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/Goto13" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/Goto3" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/Goto4" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/Goto5" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/Goto6" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/Goto7" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/Goto8" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/Goto9" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/Mux" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+InDataPort portNumber=3 dataType="single"
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Flight_Control/Flight_Control/SWR-FAULT-0000\nSWR-INIT-0000\nSWR-STANDBY-0000\nSWR-STANDBY-0010\nSWR-MANUAL-0000" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="uint8"
+OutDataPort portNumber=1 dataType="boolean"
+Block "Flight_Control/Flight_Control/SWR-FAULT-0000\nSWR-INIT-0000\nSWR-STANDBY-0000\nSWR-STANDBY-0010\nSWR-MANUAL-0000/Flight_Mode" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="uint8"
+Block "Flight_Control/Flight_Control/SWR-FAULT-0000\nSWR-INIT-0000\nSWR-STANDBY-0000\nSWR-STANDBY-0010\nSWR-MANUAL-0000/Constant" samplePeriod=Inf assignedPriority=10 min=[] max=[]
+OutDataPort portNumber=1 dataType="boolean"
+Block "Flight_Control/Flight_Control/SWR-FAULT-0000\nSWR-INIT-0000\nSWR-STANDBY-0000\nSWR-STANDBY-0010\nSWR-MANUAL-0000/Constant2" samplePeriod=Inf assignedPriority=11 min=[] max=[]
+OutDataPort portNumber=1 dataType="boolean"
+Block "Flight_Control/Flight_Control/SWR-FAULT-0000\nSWR-INIT-0000\nSWR-STANDBY-0000\nSWR-STANDBY-0010\nSWR-MANUAL-0000/Multiport\nSwitch1" samplePeriod=0.01 assignedPriority=12 min=[] max=[]
+InDataPort portNumber=1 dataType="uint8"
+InDataPort portNumber=2 dataType="boolean"
+InDataPort portNumber=3 dataType="boolean"
+InDataPort portNumber=4 dataType="boolean"
+OutDataPort portNumber=1 dataType="boolean"
+Block "Flight_Control/Flight_Control/SWR-FAULT-0000\nSWR-INIT-0000\nSWR-STANDBY-0000\nSWR-STANDBY-0010\nSWR-MANUAL-0000/Stop\n" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="boolean"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0010\nSWR-MANUAL-0020\nSWR-MANUAL-0021\n" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+InDataPort portNumber=3 dataType="single"
+InDataPort portNumber=4 dataType="uint8"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0010\nSWR-MANUAL-0020\nSWR-MANUAL-0021\n/Rc_Angle_Roll" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0010\nSWR-MANUAL-0020\nSWR-MANUAL-0021\n/Attitude_Angle_Roll" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0010\nSWR-MANUAL-0020\nSWR-MANUAL-0021\n/Rc_Rates_Roll" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0010\nSWR-MANUAL-0020\nSWR-MANUAL-0021\n/Flight_Mode" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="uint8"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0010\nSWR-MANUAL-0020\nSWR-MANUAL-0021\n/Constant" samplePeriod=Inf assignedPriority=1 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0010\nSWR-MANUAL-0020\nSWR-MANUAL-0021\n/Kp_roll_angle" samplePeriod=0.01 assignedPriority=1 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0010\nSWR-MANUAL-0020\nSWR-MANUAL-0021\n/Multiport\nSwitch1" samplePeriod=0.01 assignedPriority=3 min=[] max=[]
+InDataPort portNumber=1 dataType="uint8"
+InDataPort portNumber=2 dataType="single"
+InDataPort portNumber=3 dataType="single"
+InDataPort portNumber=4 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0010\nSWR-MANUAL-0020\nSWR-MANUAL-0021\n/Sum" samplePeriod=0.01 assignedPriority=0 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0010\nSWR-MANUAL-0020\nSWR-MANUAL-0021\n/Roll_Rate_Cmd" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0010\nSWR-MANUAL-0030\nSWR-MANUAL-0031\n" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+InDataPort portNumber=3 dataType="single"
+InDataPort portNumber=4 dataType="uint8"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0010\nSWR-MANUAL-0030\nSWR-MANUAL-0031\n/Rc_Angle_Pitch" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0010\nSWR-MANUAL-0030\nSWR-MANUAL-0031\n/Attitude_Angle_Pitch" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0010\nSWR-MANUAL-0030\nSWR-MANUAL-0031\n/Rc_Rates_Pitch" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0010\nSWR-MANUAL-0030\nSWR-MANUAL-0031\n/Flight_Mode" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="uint8"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0010\nSWR-MANUAL-0030\nSWR-MANUAL-0031\n/Constant" samplePeriod=Inf assignedPriority=16 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0010\nSWR-MANUAL-0030\nSWR-MANUAL-0031\n/Kp_pitch_angle" samplePeriod=0.01 assignedPriority=1 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0010\nSWR-MANUAL-0030\nSWR-MANUAL-0031\n/Multiport\nSwitch1" samplePeriod=0.01 assignedPriority=18 min=[] max=[]
+InDataPort portNumber=1 dataType="uint8"
+InDataPort portNumber=2 dataType="single"
+InDataPort portNumber=3 dataType="single"
+InDataPort portNumber=4 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0010\nSWR-MANUAL-0030\nSWR-MANUAL-0031\n/Sum1" samplePeriod=0.01 assignedPriority=0 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0010\nSWR-MANUAL-0030\nSWR-MANUAL-0031\n/Pitch_Rate_Cmd" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0020\nSWR-MANUAL-0021" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+InDataPort portNumber=3 dataType="boolean"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0020\nSWR-MANUAL-0021/Roll_Rate_Cmd" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0020\nSWR-MANUAL-0021/Attitude_Rates.Roll" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0020\nSWR-MANUAL-0021/Stop" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="boolean"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0020\nSWR-MANUAL-0021/Add" samplePeriod=0.01 assignedPriority=14 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+InDataPort portNumber=3 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0020\nSWR-MANUAL-0021/Delay" samplePeriod=0.01 assignedPriority=43 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0020\nSWR-MANUAL-0021/Discrete Derivative" samplePeriod=0.01 min=[] max=[]
+MaskVariable blkH = double(104.000244140625);
+MaskVariable inverseGainval = double(1);
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0020\nSWR-MANUAL-0021/Discrete Derivative/U" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0020\nSWR-MANUAL-0021/Discrete Derivative/Data Type\nDuplicate" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+InDataPort portNumber=3 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0020\nSWR-MANUAL-0021/Discrete Derivative/Diff" samplePeriod=0.01 assignedPriority=9 min=OutMin max=OutMax
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0020\nSWR-MANUAL-0021/Discrete Derivative/TSamp" samplePeriod=0.01 assignedPriority=7 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0020\nSWR-MANUAL-0021/Discrete Derivative/UD" samplePeriod=0.01 assignedPriority=8 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0020\nSWR-MANUAL-0021/Discrete Derivative/Y" samplePeriod=0.01 min=OutMin max=OutMax
+InDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0020\nSWR-MANUAL-0021/Discrete-Time\nIntegrator" samplePeriod=0.01 assignedPriority=13 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="boolean"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0020\nSWR-MANUAL-0021/Kb_Roll" samplePeriod=0.01 assignedPriority=44 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0020\nSWR-MANUAL-0021/Kd_Roll" samplePeriod=0.01 assignedPriority=6 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0020\nSWR-MANUAL-0021/Ki_Roll" samplePeriod=0.01 assignedPriority=45 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0020\nSWR-MANUAL-0021/Kp_Roll" samplePeriod=0.01 assignedPriority=5 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0020\nSWR-MANUAL-0021/Saturation" samplePeriod=0.01 assignedPriority=15 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0020\nSWR-MANUAL-0021/Sum" samplePeriod=0.01 assignedPriority=4 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0020\nSWR-MANUAL-0021/Sum1" samplePeriod=0.01 assignedPriority=46 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0020\nSWR-MANUAL-0021/Sum2" samplePeriod=0.01 assignedPriority=47 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0020\nSWR-MANUAL-0021/f1" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0030\nSWR-MANUAL-0031" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+InDataPort portNumber=3 dataType="boolean"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0030\nSWR-MANUAL-0031/Pitch_Rate_Cmd" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0030\nSWR-MANUAL-0031/Attitude_Rates.Pitch" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0030\nSWR-MANUAL-0031/Stop" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="boolean"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0030\nSWR-MANUAL-0031/Add" samplePeriod=0.01 assignedPriority=26 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+InDataPort portNumber=3 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0030\nSWR-MANUAL-0031/Delay" samplePeriod=0.01 assignedPriority=48 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0030\nSWR-MANUAL-0031/Discrete Derivative" samplePeriod=0.01 min=[] max=[]
+MaskVariable blkH = double(144.000244140625);
+MaskVariable inverseGainval = double(1);
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0030\nSWR-MANUAL-0031/Discrete Derivative/U" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0030\nSWR-MANUAL-0031/Discrete Derivative/Data Type\nDuplicate" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+InDataPort portNumber=3 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0030\nSWR-MANUAL-0031/Discrete Derivative/Diff" samplePeriod=0.01 assignedPriority=24 min=OutMin max=OutMax
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0030\nSWR-MANUAL-0031/Discrete Derivative/TSamp" samplePeriod=0.01 assignedPriority=22 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0030\nSWR-MANUAL-0031/Discrete Derivative/UD" samplePeriod=0.01 assignedPriority=23 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0030\nSWR-MANUAL-0031/Discrete Derivative/Y" samplePeriod=0.01 min=OutMin max=OutMax
+InDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0030\nSWR-MANUAL-0031/Discrete-Time\nIntegrator" samplePeriod=0.01 assignedPriority=25 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="boolean"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0030\nSWR-MANUAL-0031/Kb_Pitch" samplePeriod=0.01 assignedPriority=49 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0030\nSWR-MANUAL-0031/Kd_Pitch" samplePeriod=0.01 assignedPriority=21 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0030\nSWR-MANUAL-0031/Ki_Pitch" samplePeriod=0.01 assignedPriority=50 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0030\nSWR-MANUAL-0031/Kp_Pitch" samplePeriod=0.01 assignedPriority=20 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0030\nSWR-MANUAL-0031/Saturation" samplePeriod=0.01 assignedPriority=27 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0030\nSWR-MANUAL-0031/Sum" samplePeriod=0.01 assignedPriority=19 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0030\nSWR-MANUAL-0031/Sum1" samplePeriod=0.01 assignedPriority=51 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0030\nSWR-MANUAL-0031/Sum2" samplePeriod=0.01 assignedPriority=52 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0030\nSWR-MANUAL-0031/f2" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0040" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+InDataPort portNumber=3 dataType="boolean"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0040/Rc_Rates.Yaw" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0040/Attitude_Rates.Yaw" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0040/Stop" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="boolean"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0040/Add" samplePeriod=0.01 assignedPriority=35 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+InDataPort portNumber=3 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0040/Delay" samplePeriod=0.01 assignedPriority=53 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0040/Discrete Derivative" samplePeriod=0.01 min=[] max=[]
+MaskVariable blkH = double(184.000244140625);
+MaskVariable inverseGainval = double(1);
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0040/Discrete Derivative/U" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0040/Discrete Derivative/Data Type\nDuplicate" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+InDataPort portNumber=3 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0040/Discrete Derivative/Diff" samplePeriod=0.01 assignedPriority=33 min=OutMin max=OutMax
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0040/Discrete Derivative/TSamp" samplePeriod=0.01 assignedPriority=31 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0040/Discrete Derivative/UD" samplePeriod=0.01 assignedPriority=32 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0040/Discrete Derivative/Y" samplePeriod=0.01 min=OutMin max=OutMax
+InDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0040/Discrete-Time\nIntegrator" samplePeriod=0.01 assignedPriority=34 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="boolean"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0040/Kb_Yaw" samplePeriod=0.01 assignedPriority=54 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0040/Kd_Yaw" samplePeriod=0.01 assignedPriority=30 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0040/Ki_Yaw" samplePeriod=0.01 assignedPriority=55 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0040/Kp_Yaw" samplePeriod=0.01 assignedPriority=29 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0040/Saturation" samplePeriod=0.01 assignedPriority=36 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0040/Sum1" samplePeriod=0.01 assignedPriority=28 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0040/Sum2" samplePeriod=0.01 assignedPriority=56 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0040/Sum3" samplePeriod=0.01 assignedPriority=57 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/SWR-MANUAL-0040/f3" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/Flight_Control_Throttle" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Flight_Control/Attitude_Corrections" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+Block "Flight_Control/Flight_Control/Stop" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="boolean"
+Block "Flight_Control/Flight_Control_Throttle" samplePeriod=0.01 assignedPriority=0 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Flight_Control/Attitude_Corrections" samplePeriod=0.01 assignedPriority=38 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+Block "Flight_Control/Stop" samplePeriod=0.01 assignedPriority=39 min=[] max=[]
+InDataPort portNumber=1 dataType="boolean"

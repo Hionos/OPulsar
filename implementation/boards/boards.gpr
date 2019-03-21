@@ -1,0 +1,15 @@
+with "../hal/hal.gpr";
+
+project Boards extends "../../settings.gpr" is
+
+   for Languages use ("Ada");
+
+   case Settings.Platform is
+      when "crazyflie" =>
+         for Source_Dirs use (".", "crazyflie/**");
+   end case;
+
+   for Object_Dir use "obj" & "/" & Target & "/" & Build;
+
+end Boards;
+

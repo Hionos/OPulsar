@@ -1,0 +1,19 @@
+with "../pulsar.gpr";
+with "../../boards/boards.gpr";
+with "../../hal/hal.gpr";
+with "../battery_manager/battery_manager_impl.gpr";
+with "../navigation_reference/navigation_reference_impl.gpr";
+with "../notification_manager/notification_manager_impl.gpr";
+with "../remote_control/remote_control_impl.gpr";
+with "../flight_control/flight_control_impl.gpr";
+with "../state_machine/state_machine_impl.gpr";
+with "../motors_mixing/motors_mixing_impl.gpr";
+
+project Autopilot_Impl extends "../../../settings.gpr" is
+
+   for Languages   use ("Ada");
+   for Source_Dirs use ("impl");
+   for Object_Dir  use "obj" & "/" & Target & "/" & Build;
+
+end Autopilot_Impl;
+

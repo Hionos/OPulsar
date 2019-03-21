@@ -1,0 +1,133 @@
+abstract project Settings is
+
+   Project_Root_Dir := external ("PRJ_ROOT_DIR", ".");
+
+   type Build_Type is ("production");
+   Build : Build_Type := external ("PRJ_BUILD_TYPE", "production");
+
+   type Target_Type is ("arm-eabi");
+   Target : Target_Type := external ("PRJ_TARGET", "arm-eabi");
+
+   type Platform_Type is ("crazyflie");
+   Platform : Platform_Type := external ("PRJ_PLATFORM", "crazyflie");
+
+   ----------------------------------------------------------------------------
+   -- Switches                                                               --
+   ----------------------------------------------------------------------------
+   Ada_Switches := (
+      "-gnat2012"                   -- Ada 2012
+      ,"-gnatwa"                    -- All warnings
+      ,"-gnatf"                     -- Full errors
+      ,"-gnatw.X"
+      ,"-fcallgraph-info=su,da"     -- Genereate .ci for gnatstack analysis
+      );
+
+   Ada_Switches_Production := Ada_Switches & (
+      "-O2",                        -- Optimization
+      "-gnatp",
+      "-gnatn2"
+      );
+
+   Ada_Switches_Binder_Production := (
+      "-E"                          -- Store traceback in exceptions
+      );
+
+   Ada_Switches_Linker_Production := (
+        "-Wl,--print-memory-usage"
+        -- Specify a custom primary stack size
+        -- XReq test requires a minimum of 16k stack size to be able to
+        -- execute it, especially on arm targets
+        ,"-Wl,--defsym=__stack_size=20480"
+      );
+
+   case Build is
+      when "production" =>
+         case Target is
+            when "arm-eabi" =>
+               case Platform is
+                  when "crazyflie" =>
+                     for Runtime ("ada") use Project_Root_Dir & "/runtimes/bsp-crazyflie/dist/" & "ravenscar-sfp-stm32";
+               end case;
+               for Target use "arm-eabi";
+         end case;
+   end case;
+
+--   Ada_Switches := (
+--      "-gnat2012"                 -- Ada 2012
+--      ,"-gnatwa"                  -- All warnings
+--      ,"-gnatf"                   -- Full errors
+--      ,"-gnatw.X"
+--      ,"-fcallgraph-info=su,da"   -- Genereate .ci for gnatstack analysis
+--      ,"-fstack-check"            -- Generate checks for exceeding the stack, not compatible with SFP/ZFP
+--      ,"-gnateE"                  -- Put extra info in exception messages, not compatible with SFP/ZFP
+--      ,"-gnatwe"                  -- Warnings as error
+--      ,"-gnato"                   -- Enable overflow checking for numerics
+--      ,"-gnatg"                   -- Check Ada Language standard
+--      ,"-nostdinc"
+--      ,"-cargs"
+--      ,"-ffunction-sections"
+--      ,"-fdata-sections"
+--      ,"-gnatQ"
+--      ,"-gnatn"
+--      ,"-gnatVa",                 -- Validity checking
+--      ,"-gnata",                  -- Enable pre and post conditions
+--      );
+
+   ----------------------------------------------------------------------------
+   -- Builder: Default Options                                               --
+   ----------------------------------------------------------------------------
+   package Builder is
+      case Build is
+         when "production" =>
+            for Switches ("Ada") use Ada_Switches_Production;
+      end case;
+   end Builder;
+
+   ----------------------------------------------------------------------------
+   -- Compiler: Default Options                                              --
+   ----------------------------------------------------------------------------
+   package Compiler is
+      case Build is
+         when "production" =>
+            for Switches ("Ada") use Ada_Switches_Production;
+      end case;
+   end Compiler;
+
+   ----------------------------------------------------------------------------
+   -- Binder: Default Options                                                --
+   ----------------------------------------------------------------------------
+   package Binder is
+      case Build is
+         when "production" =>
+            for Switches ("Ada") use Ada_Switches_Binder_Production;
+      end case;
+   end Binder;
+
+   ----------------------------------------------------------------------------
+   -- Linker: Default Options                                                --
+   ----------------------------------------------------------------------------
+   package Linker is
+      case Build is
+         when "production" =>
+            for Switches ("Ada") use Ada_Switches_Linker_Production;
+      end case;
+   end Linker;
+
+   ----------------------------------------------------------------------------
+   -- Ide: Default Options                                                   --
+   ----------------------------------------------------------------------------
+   package Ide is
+      for VCS_Kind use "Git";
+
+      case Target is
+         when "arm-eabi" =>
+            for Connection_Tool use "st-util";
+            for Program_Host use "localhost:4242";
+            for Communication_Protocol use "remote";
+            for Gnatlist use "arm-eabi-gnatls";
+            for Debugger_Command use "arm-eabi-gdb";
+            for Compiler_Command ("ada") use "arm-eabi-gnatls";
+      end case;
+   end Ide;
+
+end Settings;

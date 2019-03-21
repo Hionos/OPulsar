@@ -1,0 +1,6 @@
+aggregate project Pulsar extends "settings.gpr" is
+
+   for Project_Files use ("implementation/pulsar_impl.gpr");
+
+end Pulsar;
+

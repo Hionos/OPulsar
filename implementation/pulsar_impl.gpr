@@ -1,0 +1,36 @@
+-------------------------------------------------------------------------------
+-- RESPONSIBILITIES:                                                         --
+-- This is the main Pulsar Flight System project file                        --
+-------------------------------------------------------------------------------
+
+-- Add here all the components used in the Pulsar Flight System
+with "boards/boards.gpr";
+with "hal/hal.gpr";
+with "pulsar/pulsar.gpr";
+with "pulsar/battery_manager/battery_manager_impl.gpr";
+with "pulsar/navigation_reference/navigation_reference_impl.gpr";
+with "pulsar/notification_manager/notification_manager_impl.gpr";
+with "pulsar/remote_control/remote_control_impl.gpr";
+with "pulsar/flight_control/flight_control_impl.gpr";
+with "pulsar/state_machine/state_machine_impl.gpr";
+with "pulsar/autopilot/autopilot_impl.gpr";
+with "pulsar/fast_loop/fast_loop_impl.gpr";
+
+-- Project defnition
+project Pulsar_Impl extends "../settings.gpr" is
+
+   for Object_Dir  use "obj" & "/" & Target & "/" & Build;
+   for Exec_Dir    use "bin" & "/" & Target & "/" & Build;
+
+   for Languages   use ("Ada");
+   for Source_Dirs use ("main");
+   for Main        use ("main.adb");
+
+   package Builder extends Settings.Builder is
+      case Settings.Target is
+         when "arm-eabi" =>
+            for Executable ("main.adb") use "pulsar.elf";
+      end case;
+   end Builder;
+
+end Pulsar_Impl;

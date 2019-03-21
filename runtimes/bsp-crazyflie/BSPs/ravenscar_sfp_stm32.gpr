@@ -1,0 +1,50 @@
+aggregate project Ravenscar_Sfp_Stm32 is
+
+   Base_BSP_Source_Dir   := Project'Project_Dir & "cortex-m/stm32/stm32/";
+   Base_Installation_Dir := "arm-eabi/lib/gnat/";
+   Board                 := "stm32";
+   Default_Prefix        :=
+     Base_Installation_Dir & "ravenscar-sfp-" & Board;
+   Install_Dir           := external ("PREFIX", Default_Prefix);
+
+   for external ("Add_Arith64") use "no";
+   for external ("Add_C_Support") use "no";
+   for external ("Add_Complex_Type_Support") use "no";
+   for external ("Add_Exponent_Int") use "yes";
+   for external ("Add_Exponent_LL_Float") use "yes";
+   for external ("Add_Exponent_LL_Int") use "yes";
+   for external ("Add_Exponent_Modular") use "no";
+   for external ("Add_Image_Based_Int") use "yes";
+   for external ("Add_Image_Char") use "yes";
+   for external ("Add_Image_Decimal") use "yes";
+   for external ("Add_Image_Enum") use "yes";
+   for external ("Add_Image_Float") use "yes";
+   for external ("Add_Image_Int") use "yes";
+   for external ("Add_Image_LL_Based_Int") use "no";
+   for external ("Add_Image_LL_Decimal") use "no";
+   for external ("Add_Image_LL_Int") use "no";
+   for external ("Add_Image_Wide_Char") use "no";
+   for external ("Add_Math_Lib") use "hardfloat_sp";
+   for external ("Add_Memory_Operations") use "yes";
+   for external ("CPU_Family") use "arm";
+   for external ("Has_FPU") use "yes";
+   for external ("Memory_Profile") use "small";
+   for external ("RTS_Profile") use "ravenscar-sfp";
+   for external ("Timer") use "timer32";
+   for external ("Use_Semihosting_IO") use "yes";
+
+   for external ("INSTALL_PREFIX") use Install_Dir;
+
+   for Target use "arm-eabi";
+   for Runtime ("Ada") use Base_BSP_Source_Dir &
+       "ravenscar-sfp";
+
+   for Project_Path use
+     (Base_BSP_Source_Dir & "ravenscar-sfp",
+      "../lib/gnat");
+   for Project_Files use
+     (Base_BSP_Source_Dir & "ravenscar-sfp/libgnat.gpr",
+      Base_BSP_Source_Dir & "ravenscar-sfp/libgnarl.gpr",
+      Base_BSP_Source_Dir & "ravenscar-sfp/install.gpr");
+
+end Ravenscar_Sfp_Stm32;

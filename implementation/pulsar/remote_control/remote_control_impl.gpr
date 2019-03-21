@@ -1,0 +1,11 @@
+with "../../hal/hal.gpr";
+with "../pulsar.gpr";
+
+project Remote_Control_Impl extends "../../../settings.gpr" is
+
+   for Languages   use ("Ada");
+   for Source_Dirs use ("impl");
+   for Object_Dir  use "obj" & "/" & Target & "/" & Build;
+
+end Remote_Control_Impl;
+

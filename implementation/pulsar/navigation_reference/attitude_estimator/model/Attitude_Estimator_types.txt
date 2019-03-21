@@ -1,0 +1,884 @@
+EnumType "slhistoryListType"
+EnumLiteral "Favorites"  ordinal=0 default
+EnumLiteral "Projects" ordinal=1
+EnumLiteral "Models" ordinal=2
+Solver "FixedStepDiscrete" solverMode=SingleTasking fixedStep=te initializationMode=Simplified signalResolution=UseLocalSettings
+LibraryPath ../../../../../../../../../Program Files/MATLAB/R2017b/toolbox/simulink/blocks/library/
+Block "Attitude_Estimator" samplePeriod=te
+InDataPort portNumber=1 dataType="single[3]"
+InDataPort portNumber=2 dataType="single[3]"
+InDataPort portNumber=3 dataType="uint8"
+OutDataPort portNumber=1 dataType="single[5]"
+OutDataPort portNumber=2 dataType="uint8"
+Block "Attitude_Estimator/Imu.Acc_Increments" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Imu.Gyro_Increments" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Imu.Status" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+InDataPort portNumber=2 dataType="single[3]"
+InDataPort portNumber=3 dataType="uint8"
+OutDataPort portNumber=1 dataType="single[5]"
+OutDataPort portNumber=2 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator/Imu.Acc_Increments" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/Imu.Gyro_Increments" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/Imu.Status" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator/From" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/From1" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/Goto" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/Goto1" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/Mux" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[2]"
+InDataPort portNumber=2 dataType="single[3]"
+OutDataPort portNumber=1 dataType="single[5]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+InDataPort portNumber=2 dataType="single[3]"
+InDataPort portNumber=3 dataType="boolean"
+OutDataPort portNumber=1 dataType="single[2]"
+OutDataPort portNumber=2 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Imu.Acc_Increments" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Gyro" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Gain_Boost" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute Acc_Norm" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute Acc_Norm/Acc" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute Acc_Norm/Normalize 3D Vector" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute Acc_Norm/Normalize 3D Vector/Acc" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute Acc_Norm/Normalize 3D Vector/Compare\nTo Constant" samplePeriod=0.01 min=[] max=[]
+MaskVariable const_val = double(0);
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute Acc_Norm/Normalize 3D Vector/Compare\nTo Constant/u" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute Acc_Norm/Normalize 3D Vector/Compare\nTo Constant/Compare" samplePeriod=0.01 assignedPriority=18 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute Acc_Norm/Normalize 3D Vector/Compare\nTo Constant/Constant" samplePeriod=Inf assignedPriority=17 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute Acc_Norm/Normalize 3D Vector/Compare\nTo Constant/y" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute Acc_Norm/Normalize 3D Vector/Constant" samplePeriod=Inf assignedPriority=11 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute Acc_Norm/Normalize 3D Vector/Divide" samplePeriod=0.01 assignedPriority=20 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute Acc_Norm/Normalize 3D Vector/Switch" samplePeriod=0.01 assignedPriority=19 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="boolean"
+InDataPort portNumber=3 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute Acc_Norm/Normalize 3D Vector/Vect 3D Norm" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute Acc_Norm/Normalize 3D Vector/Vect 3D Norm/Vect_3D" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute Acc_Norm/Normalize 3D Vector/Vect 3D Norm/Demux" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+OutDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=3 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute Acc_Norm/Normalize 3D Vector/Vect 3D Norm/Product" samplePeriod=0.01 assignedPriority=12 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute Acc_Norm/Normalize 3D Vector/Vect 3D Norm/Product\n" samplePeriod=0.01 assignedPriority=13 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute Acc_Norm/Normalize 3D Vector/Vect 3D Norm/Product\n\n" samplePeriod=0.01 assignedPriority=14 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute Acc_Norm/Normalize 3D Vector/Vect 3D Norm/Sqrt" samplePeriod=0.01 assignedPriority=16 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute Acc_Norm/Normalize 3D Vector/Vect 3D Norm/Sum" samplePeriod=0.01 assignedPriority=15 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+InDataPort portNumber=3 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute Acc_Norm/Normalize 3D Vector/Vect 3D Norm/Vect_3D_Norm" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute Acc_Norm/Normalize 3D Vector/Acc_Norm" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute Acc_Norm/Acc_Norm" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute correction \non gyroscopes" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+InDataPort portNumber=2 dataType="single[3]"
+InDataPort portNumber=3 dataType="boolean"
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute correction \non gyroscopes/Gravity_Err" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute correction \non gyroscopes/Gyro" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute correction \non gyroscopes/Gain_Boost" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute correction \non gyroscopes/Boost Gain alignment" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="boolean"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute correction \non gyroscopes/Boost Gain alignment/Gain_In" samplePeriod=Inf min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute correction \non gyroscopes/Boost Gain alignment/Gain_Boost" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute correction \non gyroscopes/Boost Gain alignment/Gain" samplePeriod=Inf assignedPriority=25 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute correction \non gyroscopes/Boost Gain alignment/Switch" samplePeriod=0.01 assignedPriority=45 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="boolean"
+InDataPort portNumber=3 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute correction \non gyroscopes/Boost Gain alignment/Boosted_Gain" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute correction \non gyroscopes/Constant" samplePeriod=Inf assignedPriority=110 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute correction \non gyroscopes/Constant1" samplePeriod=Inf assignedPriority=24 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute correction \non gyroscopes/Discrete-Time\nIntegrator" samplePeriod=0.01 assignedPriority=47 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute correction \non gyroscopes/Product" samplePeriod=0.01 assignedPriority=46 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute correction \non gyroscopes/Product1" samplePeriod=0.01 assignedPriority=111 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute correction \non gyroscopes/Subtract" samplePeriod=0.01 assignedPriority=48 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+InDataPort portNumber=2 dataType="single[3]"
+InDataPort portNumber=3 dataType="single[3]"
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute correction \non gyroscopes/Gyro_Corr" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute error terms" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+InDataPort portNumber=2 dataType="single[3]"
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute error terms/Acc_Norm" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute error terms/Gravity_estimated" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute error terms/Cross Product" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+InDataPort portNumber=2 dataType="single[3]"
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute error terms/Cross Product/Vec1" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute error terms/Cross Product/Vec2" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute error terms/Cross Product/ Selector " samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute error terms/Cross Product/Product" samplePeriod=0.01 assignedPriority=21 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+InDataPort portNumber=2 dataType="single[3]"
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute error terms/Cross Product/Product\n" samplePeriod=0.01 assignedPriority=22 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+InDataPort portNumber=2 dataType="single[3]"
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute error terms/Cross Product/Selector" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute error terms/Cross Product/Selector\n" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute error terms/Cross Product/Selector\n\n" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute error terms/Cross Product/Sum" samplePeriod=0.01 assignedPriority=23 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+InDataPort portNumber=2 dataType="single[3]"
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute error terms/Cross Product/Prod_Vec" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute error terms/Gravity_Err" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute estimated direction\n of gravity" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[4]"
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute estimated direction\n of gravity/Q_Est_prec" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[4]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute estimated direction\n of gravity/Constant" samplePeriod=Inf assignedPriority=6 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute estimated direction\n of gravity/Demux" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[4]"
+OutDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=3 dataType="single"
+OutDataPort portNumber=4 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute estimated direction\n of gravity/Mux" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+InDataPort portNumber=3 dataType="single"
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute estimated direction\n of gravity/Product" samplePeriod=0.01 assignedPriority=9 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute estimated direction\n of gravity/Product1" samplePeriod=0.01 assignedPriority=8 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute estimated direction\n of gravity/Product2" samplePeriod=0.01 assignedPriority=1 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute estimated direction\n of gravity/Product3" samplePeriod=0.01 assignedPriority=2 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute estimated direction\n of gravity/Product4" samplePeriod=0.01 assignedPriority=4 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute estimated direction\n of gravity/Product5" samplePeriod=0.01 assignedPriority=5 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute estimated direction\n of gravity/Subtract" samplePeriod=0.01 assignedPriority=10 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute estimated direction\n of gravity/Subtract1" samplePeriod=0.01 assignedPriority=3 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute estimated direction\n of gravity/Subtract2" samplePeriod=0.01 assignedPriority=7 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+InDataPort portNumber=3 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Compute estimated direction\n of gravity/Gravity_estimated" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+InDataPort portNumber=2 dataType="single[4]"
+OutDataPort portNumber=1 dataType="single[4]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Gyro_Corr" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Q_Est_prec" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[4]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Add" samplePeriod=0.01 assignedPriority=66 min=[] max=[]
+InDataPort portNumber=1 dataType="single[4]"
+InDataPort portNumber=2 dataType="single[4]"
+OutDataPort portNumber=1 dataType="single[4]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[4]"
+InDataPort portNumber=2 dataType="single[3]"
+OutDataPort portNumber=1 dataType="single[4]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Q_Est_Prec" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[4]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/W_F inal" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Add1" samplePeriod=0.01 assignedPriority=52 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+InDataPort portNumber=3 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Add2" samplePeriod=0.01 assignedPriority=56 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+InDataPort portNumber=3 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Add3" samplePeriod=0.01 assignedPriority=60 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+InDataPort portNumber=3 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Add4" samplePeriod=0.01 assignedPriority=64 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+InDataPort portNumber=3 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Demux" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+OutDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=3 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Demux1" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[4]"
+OutDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=3 dataType="single"
+OutDataPort portNumber=4 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/From1" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/From10" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/From11" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/From12" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/From13" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/From14" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/From15" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/From16" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/From17" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/From18" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/From19" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/From2" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/From20" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/From21" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/From22" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/From23" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/From24" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/From3" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/From4" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/From5" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/From6" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/From7" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/From8" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/From9" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Goto1" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Goto2" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Goto3" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Goto4" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Goto5" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Goto6" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Goto7" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Mux" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+InDataPort portNumber=3 dataType="single"
+InDataPort portNumber=4 dataType="single"
+OutDataPort portNumber=1 dataType="single[4]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Product10" samplePeriod=0.01 assignedPriority=59 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Product11" samplePeriod=0.01 assignedPriority=63 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Product12" samplePeriod=0.01 assignedPriority=61 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Product13" samplePeriod=0.01 assignedPriority=62 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Product2" samplePeriod=0.01 assignedPriority=49 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Product3" samplePeriod=0.01 assignedPriority=50 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Product4" samplePeriod=0.01 assignedPriority=51 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Product5" samplePeriod=0.01 assignedPriority=53 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Product6" samplePeriod=0.01 assignedPriority=54 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Product7" samplePeriod=0.01 assignedPriority=55 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Product8" samplePeriod=0.01 assignedPriority=57 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Product9" samplePeriod=0.01 assignedPriority=58 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Kinematic Propagation Quaternion/Kin_Prop_Quat" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[4]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Unit Quaternion" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[4]"
+OutDataPort portNumber=1 dataType="single[4]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Unit Quaternion/Q" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[4]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Unit Quaternion/Compare\nTo Constant" samplePeriod=0.01 min=[] max=[]
+MaskVariable const_val = double(0);
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Unit Quaternion/Compare\nTo Constant/u" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Unit Quaternion/Compare\nTo Constant/Compare" samplePeriod=0.01 assignedPriority=75 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Unit Quaternion/Compare\nTo Constant/Constant" samplePeriod=Inf assignedPriority=74 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Unit Quaternion/Compare\nTo Constant/y" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Unit Quaternion/Constant" samplePeriod=Inf assignedPriority=67 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Unit Quaternion/Divide" samplePeriod=0.01 assignedPriority=77 min=[] max=[]
+InDataPort portNumber=1 dataType="single[4]"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single[4]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Unit Quaternion/Quaternion Norm" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[4]"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Unit Quaternion/Quaternion Norm/Q" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[4]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Unit Quaternion/Quaternion Norm/ Product " samplePeriod=0.01 assignedPriority=70 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Unit Quaternion/Quaternion Norm/ Product \n" samplePeriod=0.01 assignedPriority=71 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Unit Quaternion/Quaternion Norm/Demux" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[4]"
+OutDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=3 dataType="single"
+OutDataPort portNumber=4 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Unit Quaternion/Quaternion Norm/Product" samplePeriod=0.01 assignedPriority=68 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Unit Quaternion/Quaternion Norm/Product\n" samplePeriod=0.01 assignedPriority=69 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Unit Quaternion/Quaternion Norm/Sqrt1" samplePeriod=0.01 assignedPriority=73 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Unit Quaternion/Quaternion Norm/Sum" samplePeriod=0.01 assignedPriority=72 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+InDataPort portNumber=3 dataType="single"
+InDataPort portNumber=4 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Unit Quaternion/Quaternion Norm/Q_Norm" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Unit Quaternion/Switch" samplePeriod=0.01 assignedPriority=76 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="uint8"
+InDataPort portNumber=3 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Compute Unit Quaternion/Qn" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[4]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Gain" samplePeriod=0.01 assignedPriority=65 min=[] max=[]
+InDataPort portNumber=1 dataType="single[4]"
+OutDataPort portNumber=1 dataType="single[4]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler Integration/Q_Est" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[4]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Q_Est_Previous" samplePeriod=0.01 assignedPriority=0 min=[] max=[]
+InDataPort portNumber=1 dataType="single[4]"
+OutDataPort portNumber=1 dataType="single[4]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[4]"
+OutDataPort portNumber=1 dataType="single[2]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Quaternion" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[4]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Pitch" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[4]"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Pitch/Quaternion" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[4]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Pitch/2*(qw*qy-qz*qx)" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[4]"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Pitch/2*(qw*qy-qz*qx)/Quaternion" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[4]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Pitch/2*(qw*qy-qz*qx)/Add" samplePeriod=0.01 assignedPriority=90 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Pitch/2*(qw*qy-qz*qx)/Demux" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[4]"
+OutDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=3 dataType="single"
+OutDataPort portNumber=4 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Pitch/2*(qw*qy-qz*qx)/Gain1" samplePeriod=0.01 assignedPriority=91 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Pitch/2*(qw*qy-qz*qx)/qw*qy" samplePeriod=0.01 assignedPriority=88 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Pitch/2*(qw*qy-qz*qx)/qx*qz" samplePeriod=0.01 assignedPriority=89 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Pitch/2*(qw*qy-qz*qx)/First term" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Pitch/Asin" samplePeriod=0.01 assignedPriority=92 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Pitch/Pitch" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Roll\n" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[4]"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Roll\n/Quaternion" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[4]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Roll\n/1 - 2*(qx² + qy²)" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[4]"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Roll\n/1 - 2*(qx² + qy²)/Quaternion" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[4]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Roll\n/1 - 2*(qx² + qy²)/Add1" samplePeriod=0.01 assignedPriority=86 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Roll\n/1 - 2*(qx² + qy²)/Add3" samplePeriod=0.01 assignedPriority=83 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Roll\n/1 - 2*(qx² + qy²)/Constant" samplePeriod=Inf assignedPriority=85 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Roll\n/1 - 2*(qx² + qy²)/Demux1" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[4]"
+OutDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=3 dataType="single"
+OutDataPort portNumber=4 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Roll\n/1 - 2*(qx² + qy²)/Gain3" samplePeriod=0.01 assignedPriority=84 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Roll\n/1 - 2*(qx² + qy²)/Math\nFunction" samplePeriod=0.01 assignedPriority=82 min=[] max=[]
+InDataPort portNumber=1 dataType="single[4]"
+OutDataPort portNumber=1 dataType="single[4]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Roll\n/1 - 2*(qx² + qy²)/Terminator1" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Roll\n/1 - 2*(qx² + qy²)/Terminator2" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Roll\n/1 - 2*(qx² + qy²)/Second term" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Roll\n/2*(qw*qx + qy*qz)" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[4]"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Roll\n/2*(qw*qx + qy*qz)/Quaternion" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[4]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Roll\n/2*(qw*qx + qy*qz)/Add" samplePeriod=0.01 assignedPriority=80 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Roll\n/2*(qw*qx + qy*qz)/Demux" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[4]"
+OutDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=3 dataType="single"
+OutDataPort portNumber=4 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Roll\n/2*(qw*qx + qy*qz)/Gain1" samplePeriod=0.01 assignedPriority=81 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Roll\n/2*(qw*qx + qy*qz)/qw*qx" samplePeriod=0.01 assignedPriority=78 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Roll\n/2*(qw*qx + qy*qz)/qy*qz" samplePeriod=0.01 assignedPriority=79 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Roll\n/2*(qw*qx + qy*qz)/First term" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Roll\n/Atan2" samplePeriod=0.01 assignedPriority=87 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Compute Roll\n/Roll" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Mux" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single[2]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Quaternion To Euler Angles/Euler Angles" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[2]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Euler_Angles" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[2]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-MANUAL-0021\nSWR-MANUAL-0031/Gravity_Err" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+InDataPort portNumber=2 dataType="single[3]"
+InDataPort portNumber=3 dataType="uint8"
+OutDataPort portNumber=1 dataType="uint8"
+OutDataPort portNumber=2 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Gyro" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Gravity_Err" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/IMU_Status" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-ST	ANDBY-0000\nSWR-FAULT-0000" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="uint8"
+InDataPort portNumber=2 dataType="boolean"
+OutDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Imu_Status" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Alignment_OK" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Compare\nTo Constant" samplePeriod=0.01 min=[] max=[]
+MaskVariable const_val = double(3);
+InDataPort portNumber=1 dataType="uint8"
+OutDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Compare\nTo Constant/u" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Compare\nTo Constant/Compare" samplePeriod=0.01 assignedPriority=97 min=[] max=[]
+InDataPort portNumber=1 dataType="uint8"
+InDataPort portNumber=2 dataType="uint8"
+OutDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Compare\nTo Constant/Constant" samplePeriod=Inf assignedPriority=96 min=[] max=[]
+OutDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Compare\nTo Constant/y" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Compare\nTo Constant1" samplePeriod=0.01 min=[] max=[]
+MaskVariable const_val = double(2);
+InDataPort portNumber=1 dataType="uint8"
+OutDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Compare\nTo Constant1/u" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Compare\nTo Constant1/Compare" samplePeriod=0.01 assignedPriority=0 min=[] max=[]
+InDataPort portNumber=1 dataType="uint8"
+InDataPort portNumber=2 dataType="uint8"
+OutDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Compare\nTo Constant1/Constant" samplePeriod=Inf assignedPriority=99 min=[] max=[]
+OutDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Compare\nTo Constant1/y" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Failure" samplePeriod=Inf assignedPriority=105 min=[] max=[]
+OutDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Failure1" samplePeriod=Inf assignedPriority=95 min=[] max=[]
+OutDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Initialization" samplePeriod=Inf assignedPriority=103 min=[] max=[]
+OutDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Logical\nOperator1" samplePeriod=0.01 assignedPriority=1 min=[] max=[]
+InDataPort portNumber=1 dataType="boolean"
+InDataPort portNumber=2 dataType="boolean"
+OutDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Multiport\nSwitch1" samplePeriod=0.01 assignedPriority=106 min=[] max=[]
+InDataPort portNumber=1 dataType="uint8"
+InDataPort portNumber=2 dataType="uint8"
+InDataPort portNumber=3 dataType="uint8"
+InDataPort portNumber=4 dataType="uint8"
+OutDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Operational" samplePeriod=Inf assignedPriority=104 min=[] max=[]
+OutDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Operational1" samplePeriod=Inf assignedPriority=98 min=[] max=[]
+OutDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Switch1" samplePeriod=0.01 assignedPriority=102 min=[] max=[]
+InDataPort portNumber=1 dataType="uint8"
+InDataPort portNumber=2 dataType="boolean"
+InDataPort portNumber=3 dataType="uint8"
+OutDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Switch2" samplePeriod=0.01 assignedPriority=2 min=[] max=[]
+InDataPort portNumber=1 dataType="uint8"
+InDataPort portNumber=2 dataType="boolean"
+InDataPort portNumber=3 dataType="uint8"
+OutDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Undefined" samplePeriod=Inf assignedPriority=100 min=[] max=[]
+OutDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Navigation_Reference_Status" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="uint8"
+InDataPort portNumber=2 dataType="single[3]"
+InDataPort portNumber=3 dataType="single[3]"
+OutDataPort portNumber=1 dataType="boolean"
+OutDataPort portNumber=2 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/IMU_Status" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Gyro" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Gravity_Err" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Alignment criterion" samplePeriod=0.01 assignedPriority=40 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+InEnablePort portNumber=2 dataType="boolean"
+OutDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Alignment criterion/Gravity_Err" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Alignment criterion/Enable" samplePeriod=0.01 min=[] max=[]
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Alignment criterion/Constant" samplePeriod=Inf assignedPriority=0 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Alignment criterion/Demux" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+OutDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=3 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Alignment criterion/Product" samplePeriod=0.01 assignedPriority=1 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Alignment criterion/Product\n" samplePeriod=0.01 assignedPriority=2 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Alignment criterion/Product\n\n" samplePeriod=0.01 assignedPriority=3 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Alignment criterion/Relational\nOperator" samplePeriod=0.01 assignedPriority=6 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Alignment criterion/Sqrt" samplePeriod=0.01 assignedPriority=5 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Alignment criterion/Sum" samplePeriod=0.01 assignedPriority=4 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+InDataPort portNumber=3 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Alignment criterion/Gravity_Err_OK" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Compare\nTo Constant1" samplePeriod=0.01 min=[] max=[]
+MaskVariable const_val = double(2);
+InDataPort portNumber=1 dataType="uint8"
+OutDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Compare\nTo Constant1/u" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Compare\nTo Constant1/Compare" samplePeriod=0.01 assignedPriority=38 min=[] max=[]
+InDataPort portNumber=1 dataType="uint8"
+InDataPort portNumber=2 dataType="uint8"
+OutDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Compare\nTo Constant1/Constant" samplePeriod=Inf assignedPriority=37 min=[] max=[]
+OutDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Compare\nTo Constant1/y" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Compute_Immobility" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+OutDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Compute_Immobility/Gyro" samplePeriod=0.01 min=[] max=[]
+OutDataPort portNumber=1 dataType="single[3]"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Compute_Immobility/Constant" samplePeriod=Inf assignedPriority=31 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Compute_Immobility/Constant1" samplePeriod=Inf assignedPriority=112 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Compute_Immobility/Constant2" samplePeriod=Inf assignedPriority=35 min=[] max=[]
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Compute_Immobility/Demux" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[3]"
+OutDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=3 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Compute_Immobility/Discrete-Time\nIntegrator" samplePeriod=0.01 assignedPriority=34 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="boolean"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Compute_Immobility/Logical\nOperator" samplePeriod=0.01 assignedPriority=33 min=[] max=[]
+InDataPort portNumber=1 dataType="boolean"
+OutDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Compute_Immobility/Product" samplePeriod=0.01 assignedPriority=26 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Compute_Immobility/Product\n" samplePeriod=0.01 assignedPriority=27 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Compute_Immobility/Product\n\n" samplePeriod=0.01 assignedPriority=28 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Compute_Immobility/Relational\nOperator" samplePeriod=0.01 assignedPriority=32 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Compute_Immobility/Relational\nOperator1" samplePeriod=0.01 assignedPriority=36 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+OutDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Compute_Immobility/Sqrt" samplePeriod=0.01 assignedPriority=30 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Compute_Immobility/Sum" samplePeriod=0.01 assignedPriority=29 min=[] max=[]
+InDataPort portNumber=1 dataType="single"
+InDataPort portNumber=2 dataType="single"
+InDataPort portNumber=3 dataType="single"
+OutDataPort portNumber=1 dataType="single"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Compute_Immobility/Immobility_confirmed" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Logical\nOperator" samplePeriod=0.01 assignedPriority=39 min=[] max=[]
+InDataPort portNumber=1 dataType="boolean"
+InDataPort portNumber=2 dataType="boolean"
+OutDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Logical\nOperator1" samplePeriod=0.01 assignedPriority=44 min=[] max=[]
+InDataPort portNumber=1 dataType="boolean"
+InDataPort portNumber=2 dataType="boolean"
+OutDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Logical\nOperator2" samplePeriod=0.01 assignedPriority=42 min=[] max=[]
+InDataPort portNumber=1 dataType="boolean"
+InDataPort portNumber=2 dataType="boolean"
+OutDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Logical\nOperator4" samplePeriod=0.01 assignedPriority=43 min=[] max=[]
+InDataPort portNumber=1 dataType="boolean"
+OutDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Unit Delay" samplePeriod=0.01 assignedPriority=41 min=[] max=[]
+InDataPort portNumber=1 dataType="boolean"
+OutDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Alignment_OK" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/SWR-STANDBY-0000/Gain_Boost" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Navigation_Reference_Status" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude_Estimator/SWR-ST	ANDBY-0000\nSWR-FAULT-0000/Gain_Boost" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="boolean"
+Block "Attitude_Estimator/Attitude_Estimator/Attitude" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="single[5]"
+Block "Attitude_Estimator/Attitude_Estimator/Navigation_Reference_Status" samplePeriod=0.01 min=[] max=[]
+InDataPort portNumber=1 dataType="uint8"
+Block "Attitude_Estimator/Attitude" samplePeriod=0.01 assignedPriority=94 min=[] max=[]
+InDataPort portNumber=1 dataType="single[5]"
+Block "Attitude_Estimator/Navigation_Reference_Status" samplePeriod=0.01 assignedPriority=107 min=[] max=[]
+InDataPort portNumber=1 dataType="uint8"

@@ -1,0 +1,5 @@
+BSPs/cortex-m/stm32/stm32/ravenscar-sfp/adalib/
+BSPs/cortex-m/stm32/stm32/ravenscar-sfp/obj/
+BSPs/cortex-m/stm32/stm32/zfp/adalib/
+BSPs/cortex-m/stm32/stm32/zfp/obj/
+dist/
