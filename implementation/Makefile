@@ -19,7 +19,7 @@ $(info $$GPR_RUNTIME_PATH is [${GPR_RUNTIME_PATH}])
 # --------------------------------------------------------------------------- #
 # All reachable targets
 # --------------------------------------------------------------------------- #
-.PHONY : help clean build reports
+.PHONY : help clean build
 
 # --------------------------------------------------------------------------- #
 # TARGET: clean
@@ -69,29 +69,3 @@ ifeq ($(TARGET),arm-eabi)
 	$(ARM_SIZE) bin/$(TARGET)/$(BUILD_TYPE)/$(PROG).elf
 
 endif
-
-# --------------------------------------------------------------------------- #
-# TARGET: reports
-# --------------------------------------------------------------------------- #
-reports:
-	$(info *******************************************************************************)
-	$(info [${MODULE}] Reports)
-	$(info *******************************************************************************)
-	if test -f pulsar/autopilot/Makefile; then REPORTS_DIR=$(REPORTS_DIR) $(MAKE) -C pulsar/autopilot $(@F); fi
-	if test -f pulsar/battery_manager/Makefile; then REPORTS_DIR=$(REPORTS_DIR) $(MAKE) -C pulsar/battery_manager $(@F); fi
-	if test -f pulsar/fast_loop/Makefile; then REPORTS_DIR=$(REPORTS_DIR) $(MAKE) -C pulsar/fast_loop $(@F); fi
-	if test -f pulsar/logger/Makefile; then $(MAKE) -C pulsar/logger $(@F); fi
-	if test -f pulsar/motors_mixing/Makefile; then $(MAKE) -C pulsar/motors_mixing $(@F); fi
-	if test -f pulsar/navigation_reference/Makefile; then REPORTS_DIR=$(REPORTS_DIR) $(MAKE) -C pulsar/navigation_reference $(@F); fi
-	if test -f pulsar/notification_manager/Makefile; then REPORTS_DIR=$(REPORTS_DIR) $(MAKE) -C pulsar/notification_manager $(@F); fi
-	if test -f pulsar/remote_control/Makefile; then REPORTS_DIR=$(REPORTS_DIR) $(MAKE) -C pulsar/remote_control $(@F); fi
-	if test -f pulsar/state_machine/Makefile; then REPORTS_DIR=$(REPORTS_DIR) $(MAKE) -C pulsar/state_machine $(@F); fi
-	mkdir -p $(REPORTS_DIR)/$(PROG)/$(TARGET)/check
-	-$(GNATCHECK) --subdirs=reports/check -xml -U -XPRJ_ROOT_DIR=$(PROJECT_ROOT_DIR) -XPRJ_BUILD_TYPE=analyze -XPRJ_TARGET=native -P $(PROG_IMPL).gpr
-	find ./obj/native/analyze/reports/check/. -name "*gnatcheck*" -exec cp '{}' $(REPORTS_DIR)/$(PROG)/$(TARGET)/check/. \;
-	mkdir -p $(REPORTS_DIR)/$(PROG)/$(TARGET)/metrics
-	-$(GNATMETRIC) --subdirs=reports/metrics -og ./obj/native/analyze/reports/metrics/global.metrix -xs -U -XPRJ_ROOT_DIR=$(PROJECT_ROOT_DIR) -XPRJ_BUILD_TYPE=analyze -XPRJ_TARGET=native -P $(PROG_IMPL).gpr
-	find ./obj/native/analyze/reports/metrics/. -name "*metrix*" -exec cp '{}' $(REPORTS_DIR)/$(PROG)/$(TARGET)/metrics/. \;
-	mkdir -p $(REPORTS_DIR)/$(PROG)/$(TARGET)
-	cp ../templates/root_report_check_and_metrics_only.html $(REPORTS_DIR)/$(PROG)/$(TARGET)/report.html
-

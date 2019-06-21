@@ -1,5 +1,3 @@
-
-
 include ./Makefile.mk
 
 $(info *******************************************************************************)
@@ -26,7 +24,7 @@ endef
 # --------------------------------------------------------------------------- #
 # All reachable targets
 # --------------------------------------------------------------------------- #
-.PHONY : help build-rts clean build build-tests run-tests reports dev release dist flash
+.PHONY : help build-rts clean build dev dist flash
 
 # --------------------------------------------------------------------------- #
 # TARGET: clean

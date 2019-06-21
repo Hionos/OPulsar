@@ -1,5 +1,3 @@
-
-
 # Compute pulsar-software root dir.
 # Use git to get it, but would be better to find another solution
 PROJECT_ROOT_DIR := $(shell git rev-parse --show-toplevel)
@@ -19,9 +17,6 @@ DEPLOY_DIR := dist
 
 GPRBUILD := gprbuild
 GPRBUILD_FLAGS := -p -v -XPRJ_ROOT_DIR=$(PROJECT_ROOT_DIR)
-
-GNATCHECK := gnatcheck
-GNATMETRIC := gnatmetric
 
 GENERATED_SOURCE_DIR := generated
 

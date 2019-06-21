@@ -113,21 +113,4 @@ abstract project Settings is
       end case;
    end Linker;
 
-   ----------------------------------------------------------------------------
-   -- Ide: Default Options                                                   --
-   ----------------------------------------------------------------------------
-   package Ide is
-      for VCS_Kind use "Git";
-
-      case Target is
-         when "arm-eabi" =>
-            for Connection_Tool use "st-util";
-            for Program_Host use "localhost:4242";
-            for Communication_Protocol use "remote";
-            for Gnatlist use "arm-eabi-gnatls";
-            for Debugger_Command use "arm-eabi-gdb";
-            for Compiler_Command ("ada") use "arm-eabi-gnatls";
-      end case;
-   end Ide;
-
 end Settings;

@@ -23,7 +23,7 @@ $(info *************************************************************************
 # --------------------------------------------------------------------------- #
 # All reachable targets
 # --------------------------------------------------------------------------- #
-.PHONY : help clean build reports
+.PHONY : help clean build
 
 # --------------------------------------------------------------------------- #
 # TARGET: clean
@@ -45,23 +45,3 @@ build: build-rts
 	$(info [${MODULE}] Build)
 	$(info *******************************************************************************)
 	$(GPRBUILD) $(GPRBUILD_FLAGS) -XPRJ_BUILD_TYPE=$(BUILD_TYPE) -XPRJ_TARGET=$(TARGET) -XPRJ_PLATFORM=$(PLATFORM) -P $(PROG_IMPL).gpr
-
-
-# --------------------------------------------------------------------------- #
-# TARGET: reports
-# --------------------------------------------------------------------------- #
-reports:
-	$(info *******************************************************************************)
-	$(info [${MODULE}] Reports)
-	$(info *******************************************************************************)
-	mkdir -p $(REPORTS_DIR)/$(PROG)/$(TARGET)/check
-	-$(GNATCHECK) --subdirs=reports/check -xml -U -XPRJ_ROOT_DIR=$(PROJECT_ROOT_DIR) -XPRJ_BUILD_TYPE=analyze -XPRJ_TARGET=native -P $(PROG_IMPL).gpr
-	find ./obj/native/analyze/reports/check/. -name "*gnatcheck*" -exec cp '{}' $(REPORTS_DIR)/$(PROG)/$(TARGET)/check/. \;
-	../../../tools/gnatcheck_text_report_to_html.sh $(REPORTS_DIR)/$(PROG)/$(TARGET)/check $(REPORTS_DIR)/$(PROG)/$(TARGET)/check/index.html
-	mkdir -p $(REPORTS_DIR)/$(PROG)/$(TARGET)/metrics
-	-$(GNATMETRIC) --subdirs=reports/metrics -og ./obj/native/analyze/reports/metrics/global.metrix -xs -U -XPRJ_ROOT_DIR=$(PROJECT_ROOT_DIR) -XPRJ_BUILD_TYPE=analyze -XPRJ_TARGET=native -P $(PROG_IMPL).gpr
-	find ./obj/native/analyze/reports/metrics/. -name "*metrix*" -exec cp '{}' $(REPORTS_DIR)/$(PROG)/$(TARGET)/metrics/. \;
-	../../../tools/gnatmetric_text_report_to_html.sh $(REPORTS_DIR)/$(PROG)/$(TARGET)/metrics $(REPORTS_DIR)/$(PROG)/$(TARGET)/metrics/index.html
-	mkdir -p $(REPORTS_DIR)/$(PROG)/$(TARGET)
-	cp ../../../templates/root_report_check_and_metrics_only.html $(REPORTS_DIR)/$(PROG)/$(TARGET)/report.html
-
